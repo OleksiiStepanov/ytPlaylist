@@ -1,0 +1,73 @@
+[role='video-control'] {
+  border: solid 1px #ddd;
+  padding: 10px;
+
+  [role='screen'] {
+    background-color:#ccc;
+    overflow:hidden;
+  }
+  [role='playlist'] {
+    overflow:hidden;
+    position: relative;
+
+    img {
+      display:inline-block;
+      box-sizing:border-box;
+      padding: 5px;
+      opacity:0.8;
+      border:5px solid transparent;
+    }
+    img:hover{
+      opacity:1;
+      border-color:orange;
+    }
+    img.active,
+    & > div:hover img.active:hover{
+      opacity:1;
+      border-color: orange;
+    }
+    & > div:hover img.active {
+      opacity:.8;
+      border-color: transparent;
+    }
+
+  }
+
+
+  [role='playlist'] > div {
+    white-space:nowrap;
+    font-size:0;
+    position:relative;
+
+  }
+  [role='nav-prev'],
+  [role='nav-next'] {
+    position:absolute;
+    width:32px;
+    height:32px;
+    background-color:#fff;
+    top:50%;
+    font-size:20px;
+    font-weight:bold;
+    text-align: center;
+    line-height:32px;
+    margin-top: -16px;
+    border-radius: 16px;
+    box-shadow: 0 0 32px 32px rgba(255,255,255,0.5);
+    z-index:1;
+  }
+  [role='nav-prev'] {
+    left:0;
+
+  }
+  [role='nav-prev']:before {
+    content:'<';
+  }
+  [role='nav-next'] {
+    right:0;
+
+  }
+  [role='nav-next']:before {
+    content:'>';
+  }
+}
